@@ -103,9 +103,14 @@
         }
       };
 
-      const listToBeFormatted = data.map(generateArticleSentence);
-      document.getElementById("results").innerText +=
-        listToBeFormatted.join("\n");
+     let listToBeFormatted = [];
+
+      for (let i = 0; i < data.length; i++) {
+        let sentence = generateArticleSentence(data[i]);
+        listToBeFormatted.push(sentence);
+      }
+
+      document.getElementById("results").innerText = listToBeFormatted.join("\n");
     </script>
     <script>
       document.getElementById("code").innerText =
